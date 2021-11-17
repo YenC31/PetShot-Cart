@@ -36,20 +36,20 @@ function procesarCompra() {
   if (compra.obtenerProductosLocalStorage().length === 0) {
     Swal.fire({
       type: "error",
-      title: "Oops...",
-      text: "No hay productos, selecciona alguno",
+      title: "Sorry!",
+      text: "Select a product",
       showConfirmButton: false,
-      timer: 2000,
+      timer: 4000,
     }).then(function () {
       window.location = "index.html";
     });
   } else if (cliente.value === "" || correo.value === "") {
     Swal.fire({
       type: "error",
-      title: "Oops...",
-      text: "Ingrese todos los campos requeridos",
+      title: "Sorry!",
+      text: "Enter all required fields",
       showConfirmButton: false,
-      timer: 2000,
+      timer: 4000,
     });
   } else {
     //aqui se coloca el user id generado en el emailJS
@@ -63,17 +63,6 @@ function procesarCompra() {
     textArea.rows = 10;
     textArea.hidden = true;
     productosLS = compra.obtenerProductosLocalStorage();
-
-    //Send email option 1
-    // productosLS.forEach(function (producto) {
-    //     textArea.innerHTML += `
-    //          Producto : ${producto.titulo} <br>
-    //          Precio : ${producto.precio} <br>
-    //          Cantidad: ${producto.cantidad} <br>
-    //         --------------------------------------------- <br>
-    //         `;
-    // });
-    //End option 1
 
     //Send email option 2
     textArea.innerHTML = generarTabla(productosLS).innerHTML;

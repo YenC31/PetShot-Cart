@@ -30,8 +30,8 @@
     if (productosLS === infoProducto.id) {
       Swal.fire({
         type: "info",
-        title: "Oops...",
-        text: "El producto ya está agregado",
+        title: "Sorry!",
+        text: "The product is already added",
         showConfirmButton: false,
         timer: 2000,
       });
@@ -182,8 +182,8 @@
     if (this.obtenerProductosLocalStorage().length === 0) {
       Swal.fire({
         type: "error",
-        title: "Oops...",
-        text: "El carrito está vacío, agrega algún producto",
+        title: "Sorry!",
+        text: "The cart is empty. Add a product",
         showConfirmButton: false,
         timer: 2000,
       });
